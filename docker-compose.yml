@@ -13,6 +13,8 @@ services:
       context: ./backend/login-microservice
     container_name: cpr-login
     restart: unless-stopped
+    volumes:
+      - ./professor-list.txt:/opt/ol/wlp/output/defaultServer/professor-list.txt:rw
     environment:
       APP_NAME: ${APP_NAME}
       CLIENT_ID: ${CLIENT_ID}
